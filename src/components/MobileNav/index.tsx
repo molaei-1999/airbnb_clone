@@ -7,19 +7,19 @@ import { AnimatePresence } from "framer-motion";
 import { MouseEvent } from "react";
 
 export default function MobileNav() {
-  let [show, setShow] = useAtom(popupAtom);
+  const [show, setShow] = useAtom(popupAtom);
 
-  let handleClick = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
-    let target = e.target as HTMLElement;
-    let isTargetElm = target.getAttribute("data-close");
-    let targetElmParent = target.parentElement?.getAttribute("data-close");
+  const handleClick = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
+    const target = e.target as HTMLElement;
+    const isTargetElm = target.getAttribute("data-close");
+    const targetElmParent = target.parentElement?.getAttribute("data-close");
 
     if (isTargetElm === "closePopup" || isTargetElm === "closePopupIcon") {
-      setShow((prev) => (prev = false));
+      setShow(false);
     } else if (targetElmParent === "closePopupIcon") {
-      setShow((prev) => (prev = false));
+      setShow(false);
     } else {
-      setShow((prev) => (prev = true));
+      setShow( true);
     }
   };
 

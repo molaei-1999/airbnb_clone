@@ -7,14 +7,14 @@ import {
 import React from "react";
 import Counting from "../MobileNav/Counting";
 
-let guestsList = [
+const guestsList = [
   { id: 1, age: "Ages 13 or above", who: "Adults" },
   { id: 2, age: "Ages 2 - 12", who: "Children" },
   { id: 3, age: "Under 2", who: "Infants" },
   { id: 4, age: "Bringing a service animal", who: "Pets" },
 ];
 
-let CustomAddGuest = () => {
+const CustomAddGuest = () => {
   return (
     <>
       {guestsList.map((guest) => {
@@ -46,6 +46,7 @@ export default function AddGuestsComp({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <Menubar>
       <MenubarMenu>

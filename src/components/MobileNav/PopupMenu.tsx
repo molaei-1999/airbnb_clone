@@ -49,7 +49,7 @@ export default function PopupMenu() {
                 className="flex justify-between items-center"
               >
                 <span>Where</span>
-                <span>I'm flexible</span>
+                <span>I &apos; m flexible</span>
               </AccordionTrigger>
               <AccordionContent className="px-2">
                 Yes. It adheres to the WAI-ARIA design pattern.
@@ -76,7 +76,7 @@ export default function PopupMenu() {
               </AccordionTrigger>
               <AccordionContent className="px-2">
                 <p className="font-semibold text-xl mt-1 mb-2">
-                  When's your trip?
+                  When&apos;s your trip?
                 </p>
                 <AnyWeek />
               </AccordionContent>
@@ -102,7 +102,7 @@ export default function PopupMenu() {
                 <span>Add dates</span>
               </AccordionTrigger>
               <AccordionContent className="px-2">
-                <p className="font-semibold text-xl mt-1 mb-2">Who's coming?</p>
+                <p className="font-semibold text-xl mt-1 mb-2">Who&apos;s coming?</p>
                 <AddGuests />
               </AccordionContent>
             </AccordionItem>

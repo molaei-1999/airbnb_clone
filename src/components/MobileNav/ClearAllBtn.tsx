@@ -5,10 +5,10 @@ import { calendarDateAtom } from "@/atoms/calendarAtom";
 import { addDays } from "date-fns";
 
 export default function ClearAllBtn() {
-  let clearValues = useSetAtom(guestsCountAtom);
-  let clearCalendarDate = useSetAtom(calendarDateAtom);
+  const clearValues = useSetAtom(guestsCountAtom);
+  const clearCalendarDate = useSetAtom(calendarDateAtom);
 
-  let handleClick = () => {
+  const handleClick = () => {
     clearValues({
       Adults: 0,
       Children: 0,

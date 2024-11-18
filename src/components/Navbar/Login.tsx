@@ -2,8 +2,14 @@ import webLogo from "@/public/images/webIcon.png";
 import Image from "next/image";
 import { MdMenu } from "react-icons/md";
 import avatar from "@/public/images/avatar.png";
+import KindeLogin from "./authComponents/KindeLogin";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function Login() {
+export default async function Login() {
+  const { isAuthenticated, getUser } = getKindeServerSession();
+  const user = await getUser();
+  const isUserAuthenticated = await isAuthenticated();
+
   return (
     <div className="flex justify-center items-center w-fit ms-auto xl:ms-0 lg:space-x-1">
       <p
@@ -26,21 +32,23 @@ export default function Login() {
           className="h-[20px] w-[20px] lg:h-[22px] lg:w-[22px] cursor-pointer"
         />
       </div>
-      <div
-        className="flex justify-center items-center space-x-1
+      <KindeLogin user={user} authenticated={isUserAuthenticated}>
+        <div
+          className="flex justify-center items-center space-x-1
           max-w-fit px-2 py-1 border border-slate-500/35 rounded-full
-          transition duration-[0.2s] shadow-none hover:shadow-md
+          transition duration-200 shadow-none hover:shadow-md
           lg:px-3 lg:py-2"
-      >
-        <MdMenu size={21} />
-        <Image
-          alt="user avatar navbar"
-          src={avatar}
-          height={100}
-          width={100}
-          className="h-6 w-6 lg:h-7 lg:w-7"
-        />
-      </div>
+        >
+          <MdMenu size={21} />
+          <Image
+            alt="user avatar navbar"
+            src={avatar}
+            height={100}
+            width={100}
+            className="h-6 w-6 lg:h-7 lg:w-7"
+          />
+        </div>
+      </KindeLogin>
     </div>
   );
 }

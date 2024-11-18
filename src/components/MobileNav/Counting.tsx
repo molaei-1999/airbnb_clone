@@ -1,6 +1,7 @@
 "use client";
-
-import { useGuestAtom } from "@/lib/useGuestAtom";
+import { addGuestAtom } from "@/atoms/addGuests";
+import { useGuestAtomValue } from "@/lib/useGuestAtom";
+import { useSetAtom } from "jotai";
 import { GoPlus } from "react-icons/go";
 import { HiMiniMinusSmall } from "react-icons/hi2";
 
@@ -9,27 +10,22 @@ type TProps = {
 };
 
 export default function Counting({ people }: TProps) {
-  let guest = useGuestAtom(people);
-  let targetGuest = Object.values(guest!)[0];
-
-  let handleCounting = (type: "inc" | "dec") => {
-    if (type === "inc") guest?.increaseFn();
-    if (type === "dec") guest?.decreaseFn();
-  };
+  const guestValue = useGuestAtomValue(people);
+  const setGuestValue = useSetAtom(addGuestAtom);
 
   return (
     <div className="flex items-center justify-center space-x-4">
       <button
-        disabled={!targetGuest}
-        onClick={() => handleCounting("dec")}
+        disabled={!guestValue}
+        onClick={() => setGuestValue({ guest: people, type: "dec" })}
         className="border border-stone-400 rounded-full p-[6px] bg-none
         disabled:opacity-40 transition duration-200"
       >
         <HiMiniMinusSmall size={17} />
       </button>
-      <span className="text-base lg:text-lg">{Object.values(guest!)[0]}</span>
+      <span className="text-base lg:text-lg">{guestValue}</span>
       <button
-        onClick={() => handleCounting("inc")}
+        onClick={() => setGuestValue({ guest: people, type: "inc" })}
         className="border border-stone-400 rounded-full p-[6px] bg-none"
       >
         <GoPlus size={17} />

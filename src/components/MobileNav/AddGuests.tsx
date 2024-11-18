@@ -1,6 +1,6 @@
 import Counting from "./Counting";
 
-let guestsList = [
+const guestsList = [
   { id: 1, age: "Ages 13 or above", who: "Adults" },
   { id: 2, age: "Ages 2 - 12", who: "Children" },
   { id: 3, age: "Under 2", who: "Infants" },
