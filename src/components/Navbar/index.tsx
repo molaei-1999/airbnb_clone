@@ -5,7 +5,7 @@ import Search from "./Search";
 
 export default function Navbar() {
   return (
-    <div className="px-5 mt-3 select-none">
+    <div className="mt-3 select-none">
       <div
         className="hidden md:flex justify-start items-center
         xl:justify-between"
