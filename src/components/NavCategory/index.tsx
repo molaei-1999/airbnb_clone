@@ -11,7 +11,7 @@ import {
 } from "./CategoryCarousel";
 
 export default function NavbarCategory() {
-  let categoryBoxSize = 100 / 15;
+  const categoryBoxSize = 100 / 15;
 
   return (
     <div className="w-full flex items-center justify-between mt-8">
