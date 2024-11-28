@@ -19,8 +19,8 @@ export default function AddGuests() {
           >
             {/*  */}
             <div className="me-3">
-              <p className="font-semibold mb-1 text-base">{guest.who}</p>
-              <p className="font-light text-stone-700 text-[14px]">
+              <p className="font-semibold mb-1 text-sm">{guest.who}</p>
+              <p className="font-light text-stone-700 text-[13px]">
                 {guest.age}
               </p>
             </div>

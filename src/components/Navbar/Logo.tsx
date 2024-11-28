@@ -15,13 +15,16 @@ export default function Logo() {
           className="h-7"
         />
       </Link>
-      <Link className="inline-block lg:hidden" href={"/"}>
+      <Link
+        className="flex items-start justify-start me-8 lg:hidden"
+        href={"/"}
+      >
         <Image
           alt="airbnb Logo"
           src={airbnbArmLogo}
-          width={100}
+          width={5}
           height={5}
-          className="h-7 w-24"
+          className="h-7 w-fit"
         />
       </Link>
     </>

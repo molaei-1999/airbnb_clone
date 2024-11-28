@@ -11,13 +11,11 @@ import {
 } from "./CategoryCarousel";
 
 export default function NavbarCategory() {
-  const categoryBoxSize = 100 / 15;
-
   return (
     <div className="w-full flex items-center justify-between mt-8">
-      <Carousel className="flex space-x-8 w-full">
+      <Carousel className="flex space-x-0 md:space-x-8 w-full">
         <CarouselPrevious
-          className="h-fit p-[10px] border rounded-full border-black
+          className="hidden md:block h-fit p-[10px] border rounded-full border-black
           opacity-70 duration-200 disabled:opacity-30"
         />
         <CarouselContent>
@@ -25,7 +23,8 @@ export default function NavbarCategory() {
             return (
               <CarouselItem
                 key={category.id}
-                style={{ flexBasis: categoryBoxSize + "%" }}
+                className="basis-1/3 s:basis-1/5 sm:basis-[14.28%]
+                lg:basis-[9.09%] 2xl:basis-[6.666666666666667%]"
               >
                 <CategoryBox category={category} />
               </CarouselItem>
@@ -33,7 +32,7 @@ export default function NavbarCategory() {
           })}
         </CarouselContent>
         <CarouselNext
-          className="h-fit p-[10px] border rounded-full border-black
+          className="hidden md:block h-fit p-[10px] border rounded-full border-black
           opacity-70 duration-200 disabled:opacity-30"
         />
       </Carousel>

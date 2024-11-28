@@ -14,9 +14,9 @@ export default async function Login() {
     <div className="flex justify-center items-center w-fit ms-auto xl:ms-0 lg:space-x-1">
       <p
         className="cursor-pointer transition duration-200 bg-white
-        hover:bg-stone-300/25 px-2 py-1 text-[14px]
+        hover:bg-stone-300/25 px-[6px] py-1 text-sm
         rounded-full truncate text-nowrap
-        lg:px-5 lg:py-2 lg:text-base"
+        xl:px-5 xl:py-2 xl:text-base"
       >
         Airbnb your home
       </p>

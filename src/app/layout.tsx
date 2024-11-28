@@ -28,7 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-20 py-3`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased px-10
+        md:scroll-px-16 lg:px-16 xl:px-20 py-3`}
       >
         <ToasterProvider />
         <nav>
